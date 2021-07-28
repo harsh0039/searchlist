@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Search or Filter List</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body id="body" style="background:#F7FAFF">
+
+	<h2 class="text-center mt-5 text-primary">Search or Filter List  </h2><hr style="display:block;height:12px;">
+
+	<div class="container">
+
+	<input type="text" class="form-control" id="input" placeholder="Search your items" style="width:800px;border:2px solid black;margin:0 auto" onkeyup="check()">
+
+	<ul id="ul" class="list-group mt-3" style="width:800px;margin:0 auto">
+		<li class="list-group-item"><a href="#">Harsh</a></li>
+		<li class="list-group-item"><a href="#">Sam</a></li>
+		<li class="list-group-item"><a href="#">Jem</a></li>
+		<li class="list-group-item"><a href="#">Brateily</a></li>
+		<li class="list-group-item"><a href="#">John</a></li>
+		<li class="list-group-item"><a href="#">Kane</a></li>
+		<li class="list-group-item"><a href="#">cherry</a></li>
+	</ul>
+</div>
+
+	
+
+<script>
+	function check(){
+		var filter = document.getElementById("input").value.toUpperCase();
+		var ul = document.getElementById("ul");
+		var li = ul.getElementsByTagName("li");
+		for(i=0;i<li.length;i++){
+
+		var a = li[i].getElementsByTagName("a")[0];
+		var text = a.innertext || a.textContent ;
+		if(text.toUpperCase().indexOf(filter) > -1)
+		{
+         li[i].style.display = "";
+		}
+		else 
+		{
+             li[i].style.display = "none";
+
+		}
+	
+
+
+
+
+		}
+
+	}
+</script>
+
+</body>
+</html>
